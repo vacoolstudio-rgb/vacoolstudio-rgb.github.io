@@ -51,7 +51,7 @@
 
 <p><strong>Eluna has no accounts and no servers.</strong> There is no sign-up, no profile, and no
 database of ours anywhere with your name on it. What you write down in an Eluna
-app — your cycle, your books, your watch history, your subscriptions — is stored
+app — your cycle, your books, your watch history — is stored
 in a database on your own phone, and we cannot read it, because there is nowhere
 for us to read it from.</p>
 
@@ -73,8 +73,6 @@ device is spelled out <strong>per app</strong>, and the annex at the end is the 
 <tr><td><strong>Eluna Cycle</strong></td><td><code>com.eluna.cycle</code></td><td>Menstrual-cycle and symptom tracker</td></tr>
 <tr><td><strong>Eluna Reader</strong></td><td><code>com.eluna.reader</code></td><td>E-book reader for books you own</td></tr>
 <tr><td><strong>Eluna Screen</strong></td><td><code>com.eluna.screen</code></td><td>TV, film and anime tracker</td></tr>
-<tr><td><strong>Eluna Subscription</strong></td><td><code>com.lunara.eluna_subs</code></td><td>Subscription and spending manager</td></tr>
-<tr><td><strong>Eluna Media</strong></td><td><code>com.lunara.eluna_media</code></td><td>Offline media converter</td></tr>
 </table>
 </div>
 
@@ -93,8 +91,7 @@ on your device and stays there.</li>
 mechanism by which we could.</li>
 <li><strong>No personalized advertising.</strong> Where ads appear, they are always requested as
 <strong>non-personalized</strong>: they are not chosen using a profile of you or of what you
-have done in the app. Eluna Media goes further and strips the advertising-ID
-permission from the app entirely.</li>
+have done in the app.</li>
 <li><strong>No profiling of the contents.</strong> No Eluna app sends what you <em>wrote</em> anywhere
 for analysis. Not your symptoms, not your notes, not your diary.</li>
 </ul>
@@ -115,13 +112,6 @@ and a full-text index of your books. All local.</li>
 <li><strong>Eluna Screen</strong> — what you track, what you have watched and when, your diary
 entries, ratings, notes, goals, collections, and any photos you attach to a
 diary entry.</li>
-<li><strong>Eluna Subscription</strong> — your subscriptions, their prices, billing dates, categories and
-notes, and your payment history. The database is encrypted with SQLCipher
-(AES-256), with the key in the platform keystore. <strong>Eluna Subscription never stores a card
-number, an IBAN, or any payment credential</strong> — it does not ask for one. A bank
-statement you import is parsed on the device and is not uploaded anywhere.</li>
-<li><strong>Eluna Media</strong> — the media files you convert and the settings you convert them
-with. Output lands in the app's own folder until you save or share it.</li>
 </ul>
 
 <p><strong>Uninstalling an app deletes all of it.</strong> That is the flip side of local-first,
@@ -132,7 +122,7 @@ and it is stated again under <em>Your responsibility</em> below.</p>
 <p>Each item below is a <strong>direct call from your phone to that service</strong>, so that
 service sees your IP address. None of it passes through a server of ours.</p>
 
-<h3>1. Advertising — Eluna Cycle, Eluna Reader, Eluna Screen, Eluna Subscription, Eluna Media</h3>
+<h3>1. Advertising — Eluna Cycle, Eluna Reader, Eluna Screen</h3>
 
 <p>The free apps are funded by a single banner. Never an interstitial, never a
 rewarded video.</p>
@@ -143,9 +133,6 @@ rewarded video.</p>
 <li>during the first two weeks after you install the app;</li>
 <li>ever again, once you buy the one-time &ldquo;remove ads&rdquo; purchase.</li>
 </ul>
-
-<p><strong>Eluna Media</strong> is the one exception: it has no in-app purchases at
-all, so its banner cannot be bought away — the annex reflects this.</p>
 
 <p>When it does appear, it is served by <strong>Google AdMob</strong>, which receives your IP
 address, your device model and OS, and — in the apps that have not removed the
@@ -159,9 +146,6 @@ consent form is shown before the advertising SDK is started, and if you decline 
 is <strong>never started at all</strong> — no ad request, no identifier, no ad. You can change
 your answer at any time from the app's settings, under <em>Ad privacy</em>. Outside those
 regions no form is required and none is shown.</p>
-
-<p><strong>Eluna Media</strong> goes further and removes the <code>AD_ID</code> permission from the app
-entirely, so no advertising identifier is available to the SDK at all.</p>
 
 <p>Google's handling of this data is described at
 <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
@@ -284,7 +268,6 @@ to your system's share sheet and does not know what you pick.</p>
 <tr><td>Eluna Cycle</td><td><code>.eluna</code> backup</td><td><strong>Yes</strong> — AES-256 with a key derived from your password</td></tr>
 <tr><td>Eluna Cycle</td><td>PDF report for a doctor</td><td>Optional password protection; <strong>unencrypted if you do not set one</strong></td></tr>
 <tr><td>Eluna Screen</td><td>encrypted vault file</td><td><strong>Yes</strong> — same sealed vault used for cloud backup</td></tr>
-<tr><td>Eluna Subscription</td><td>CSV / JSON</td><td><strong>Optional</strong> — AES-256-GCM if you set a password; <strong>plain text if you do not</strong></td></tr>
 <tr><td>Eluna Reader</td><td><code>.elunabackup</code> archive</td><td><strong>No.</strong> It is a ZIP. The password you set is only checked on restore — it does <strong>not</strong> encrypt the archive, and anything that opens ZIPs can read it</td></tr>
 </table>
 </div>
@@ -374,20 +357,20 @@ their terms; refund requests go to them, not to us.</p>
 
 <div class="tablewrap">
 <table>
-<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Subscription</th><th>Eluna Media</th></tr>
-<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>spending</td><td>your media files</td></tr>
-<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td><strong>full DB, SQLCipher</strong></td><td>none</td></tr>
-<tr><td>Ads (AdMob, non-personalized)</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes, <strong>no advertising ID</strong></td></tr>
-<tr><td>EEA consent form (UMP), SDK off until answered</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr>
-<tr><td>In-app purchase</td><td>remove ads</td><td>remove ads (Pro)</td><td>remove ads</td><td>remove ads</td><td>—</td></tr>
-<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl</td><td>—</td><td>—</td></tr>
-<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Cloud backup</td><td>—</td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>—</td></tr>
-<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>optional</td><td>—</td></tr>
+<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th></tr>
+<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td></tr>
+<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td></tr>
+<tr><td>Ads (AdMob, non-personalized)</td><td>yes</td><td>yes</td><td>yes</td></tr>
+<tr><td>EEA consent form (UMP), SDK off until answered</td><td>yes</td><td>yes</td><td>yes</td></tr>
+<tr><td>In-app purchase</td><td>remove ads</td><td>remove ads (Pro)</td><td>remove ads</td></tr>
+<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl</td></tr>
+<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td></tr>
+<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td></tr>
+<tr><td>Cloud backup</td><td>—</td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td></tr>
+<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td></tr>
 </table>
 </div>
 

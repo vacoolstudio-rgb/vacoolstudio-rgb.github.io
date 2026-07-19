@@ -58,7 +58,7 @@ device is spelled out <strong>per app</strong>, and the annex at the end is the 
 <tr><td><strong>Eluna Cycle</strong></td><td><code>com.eluna.cycle</code></td><td>Menstrual-cycle and symptom tracker</td></tr>
 <tr><td><strong>Eluna Reader</strong></td><td><code>com.eluna.reader</code></td><td>E-book reader for books you own</td></tr>
 <tr><td><strong>Eluna Screen</strong></td><td><code>com.eluna.screen</code></td><td>TV, film and anime tracker</td></tr>
-<tr><td><strong>Lunara</strong></td><td><code>com.lunara.eluna_subs</code></td><td>Subscription and spending manager</td></tr>
+<tr><td><strong>Eluna Subscription</strong></td><td><code>com.lunara.eluna_subs</code></td><td>Subscription and spending manager</td></tr>
 <tr><td><strong>Eluna Media</strong></td><td><code>com.lunara.eluna_media</code></td><td>Offline media converter</td></tr>
 </table>
 </div>
@@ -100,9 +100,9 @@ and a full-text index of your books. All local.</li>
 <li><strong>Eluna Screen</strong> — what you track, what you have watched and when, your diary
 entries, ratings, notes, goals, collections, and any photos you attach to a
 diary entry.</li>
-<li><strong>Lunara</strong> — your subscriptions, their prices, billing dates, categories and
+<li><strong>Eluna Subscription</strong> — your subscriptions, their prices, billing dates, categories and
 notes, and your payment history. The database is encrypted with SQLCipher
-(AES-256), with the key in the platform keystore. <strong>Lunara never stores a card
+(AES-256), with the key in the platform keystore. <strong>Eluna Subscription never stores a card
 number, an IBAN, or any payment credential</strong> — it does not ask for one. A bank
 statement you import is parsed on the device and is not uploaded anywhere.</li>
 <li><strong>Eluna Media</strong> — the media files you convert and the settings you convert them
@@ -117,7 +117,7 @@ and it is stated again under <em>Your responsibility</em> below.</p>
 <p>Each item below is a <strong>direct call from your phone to that service</strong>, so that
 service sees your IP address. None of it passes through a server of ours.</p>
 
-<h3>1. Advertising — Eluna Cycle, Eluna Reader, Eluna Screen, Lunara, Eluna Media</h3>
+<h3>1. Advertising — Eluna Cycle, Eluna Reader, Eluna Screen, Eluna Subscription, Eluna Media</h3>
 
 <p>The free apps are funded by a single banner. Never an interstitial, never a
 rewarded video.</p>
@@ -266,7 +266,7 @@ to your system's share sheet and does not know what you pick.</p>
 <tr><td>Eluna Cycle</td><td><code>.eluna</code> backup</td><td><strong>Yes</strong> — AES-256 with a key derived from your password</td></tr>
 <tr><td>Eluna Cycle</td><td>PDF report for a doctor</td><td>Optional password protection; <strong>unencrypted if you do not set one</strong></td></tr>
 <tr><td>Eluna Screen</td><td>encrypted vault file</td><td><strong>Yes</strong> — same sealed vault used for cloud backup</td></tr>
-<tr><td>Lunara</td><td>CSV / JSON</td><td><strong>Optional</strong> — AES-256-GCM if you set a password; <strong>plain text if you do not</strong></td></tr>
+<tr><td>Eluna Subscription</td><td>CSV / JSON</td><td><strong>Optional</strong> — AES-256-GCM if you set a password; <strong>plain text if you do not</strong></td></tr>
 <tr><td>Eluna Reader</td><td><code>.elunabackup</code> archive</td><td><strong>No.</strong> It is a ZIP. The password you set is only checked on restore — it does <strong>not</strong> encrypt the archive, and anything that opens ZIPs can read it</td></tr>
 </table>
 </div>
@@ -356,7 +356,7 @@ their terms; refund requests go to them, not to us.</p>
 
 <div class="tablewrap">
 <table>
-<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Lunara</th><th>Eluna Media</th></tr>
+<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Subscription</th><th>Eluna Media</th></tr>
 <tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
 <tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
 <tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>

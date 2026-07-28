@@ -295,7 +295,14 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   margin: 0;
 }
 
-.app-card .links { margin-top: 12px; }
+/* flex, not inline-block spacing: an app on both stores gets two pills, and on a
+   narrow phone they have to wrap onto their own lines rather than overflow. */
+.app-card .links {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
 .app-card .links a {
   display: inline-block;

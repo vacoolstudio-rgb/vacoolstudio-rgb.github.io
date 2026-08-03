@@ -26,7 +26,7 @@
 <h1>Eluna — Privacy Policy and Terms of Use</h1>
 
 <div class="meta">
-  <strong>Effective:</strong> 26 July 2026<br>
+  <strong>Effective:</strong> 3 August 2026<br>
   <strong>Applies to:</strong> every Eluna application (listed below), on Android and iOS<br>
   <strong>Publisher and data controller:</strong> Serhii Vakulenchyk (&ldquo;Eluna&rdquo;, &ldquo;we&rdquo;)<br>
   <strong>Contact:</strong> <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a>
@@ -122,10 +122,20 @@ and it is stated again under <em>Your responsibility</em> below.</p>
 <p>Each item below is a <strong>direct call from your phone to that service</strong>, so that
 service sees your IP address. None of it passes through a server of ours.</p>
 
-<h3>1. Advertising — Eluna Cycle, Eluna Reader, Eluna Screen</h3>
+<h3>1. Advertising — Eluna Cycle, Eluna Reader</h3>
 
-<p>The free apps are funded by a single banner. Never an interstitial, never a
-rewarded video.</p>
+<p><strong>Eluna Screen is going ad-free.</strong> The advertising SDK was removed from the app
+outright in <strong>version 1.0.4</strong>: no banner, no ad request, no consent form and no
+advertising identifier, because no advertising code is left in the app to use one.
+It is funded by optional tips instead, described under <em>Purchases</em> below.</p>
+
+<p>That is not yet true of every copy in the wild. The build on the App Store today
+is older than 1.0.4 and still carries the banner described in the rest of this
+section; it stops the moment the ad-free update passes review, and this caveat
+goes with it. Check <em>Settings → About</em> for the version you have.</p>
+
+<p>Where a banner does appear — Eluna Cycle, Eluna Reader, and Eluna Screen before
+1.0.4 — it is a single one. Never an interstitial, never a rewarded video.</p>
 
 <p>It does not appear at all:</p>
 
@@ -141,7 +151,7 @@ permission — your device's <strong>advertising identifier</strong>. Ads are re
 have done in the app. AdMob still uses the identifier for frequency capping and
 fraud prevention, and that is why consent matters where the law requires it.</p>
 
-<p><strong>In the EEA, the UK and Switzerland, every Eluna app asks first.</strong> Google's
+<p><strong>In the EEA, the UK and Switzerland, any app that shows one asks first.</strong> Google's
 consent form is shown before the advertising SDK is started, and if you decline it
 is <strong>never started at all</strong> — no ad request, no identifier, no ad. You can change
 your answer at any time from the app's settings, under <em>Ad privacy</em>. Outside those
@@ -153,12 +163,18 @@ regions no form is required and none is shown.</p>
 <p><strong>Legal basis:</strong> consent (Art. 6(1)(a)) where required; otherwise our legitimate
 interest in funding a free app (Art. 6(1)(f)).</p>
 
-<h3>2. Purchases — all apps with a &ldquo;remove ads&rdquo; option</h3>
+<h3>2. Purchases — &ldquo;remove ads&rdquo; in Eluna Cycle and Eluna Reader, tips in Eluna Screen</h3>
 
 <p>Handled entirely by <strong>Google Play Billing</strong> or the <strong>Apple App Store</strong>. They tell
 the app whether the purchase exists; we never see your payment details, your card,
 or your name. <strong>No third-party purchase-validation service is used</strong> — no
 RevenueCat, no receipt server of ours.</p>
+
+<p><strong>From 1.0.4 Eluna Screen has nothing to unlock.</strong> Its purchases are tips, of a
+few sizes, and they buy no feature: the app is the same before and after. Not
+tipping costs you nothing and hides nothing. Earlier versions sold a
+&ldquo;remove ads&rdquo; purchase instead; if you bought it, there is nothing left for it to
+do — the update removes the ads for everyone.</p>
 
 <h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader</h3>
 
@@ -299,8 +315,8 @@ yourself, immediately, without asking us:</p>
 <li><strong>Erasure</strong> — uninstall the app. If you enabled cloud backup, delete the vault
 as well (in the app: <em>Cloud sync → Delete the cloud copy</em>).</li>
 <li><strong>Withdraw consent</strong> — turn off the feature that asked for it: ads consent (EEA
-users, in Settings), translation, cloud backup, or the support-email
-diagnostics.</li>
+users of Eluna Cycle and Eluna Reader, in Settings), translation, cloud backup, or
+the support-email diagnostics.</li>
 <li><strong>Object, or complain</strong> — write to <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a>, or to your national
 data-protection authority.</li>
 </ul>
@@ -369,9 +385,9 @@ their terms; refund requests go to them, not to us.</p>
 <tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td></tr>
 <tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td></tr>
 <tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td></tr>
-<tr><td>Ads (AdMob, non-personalized)</td><td>yes</td><td>yes</td><td>yes</td></tr>
-<tr><td>EEA consent form (UMP), SDK off until answered</td><td>yes</td><td>yes</td><td>yes</td></tr>
-<tr><td>In-app purchase</td><td>remove ads</td><td>remove ads (Pro)</td><td>remove ads</td></tr>
+<tr><td>Ads (AdMob, non-personalized)</td><td>yes</td><td>yes</td><td><strong>removed in 1.0.4</strong>; yes before</td></tr>
+<tr><td>EEA consent form (UMP), SDK off until answered</td><td>yes</td><td>yes</td><td>only before 1.0.4</td></tr>
+<tr><td>In-app purchase</td><td>remove ads</td><td>remove ads (Pro)</td><td>tips, unlock nothing (was: remove ads)</td></tr>
 <tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td></tr>
 <tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td></tr>
 <tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td></tr>

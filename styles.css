@@ -274,15 +274,17 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   box-shadow: 0 14px 36px var(--shadow);
 }
 
+/* The real launcher icon each app ships, not a stand-in emoji. They are all dark,
+   full-bleed artwork, so the tile is just a mask: rounded like a home screen,
+   with a hairline to hold the edge against the dark background. */
 .app-card .icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  font-size: 1.35rem;
-  background: linear-gradient(135deg, var(--accent-soft), rgba(232, 121, 185, 0.12));
+  width: 56px;
+  height: 56px;
+  border-radius: 15px;
+  object-fit: cover;
+  background: var(--bg-elev);
   border: 1px solid var(--border);
+  box-shadow: 0 4px 14px var(--shadow);
   margin-bottom: 6px;
 }
 

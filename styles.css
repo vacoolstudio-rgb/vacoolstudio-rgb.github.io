@@ -335,6 +335,18 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   width: fit-content;
 }
 
+/* One store per pill. A single badge naming both stores wrapped onto two lines
+   in a card this narrow and read as one long smear; two short pills wrap as a
+   row, and line up with the .links pills on the cards that are already out. */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badges .badge { margin-top: 0; }
+
 /* ---------- Policy page ---------- */
 
 article.policy { font-size: 1rem; }

@@ -26,7 +26,7 @@
 <h1>Eluna — Privacy Policy and Terms of Use</h1>
 
 <div class="meta">
-  <strong>Effective:</strong> 4 August 2026<br>
+  <strong>Effective:</strong> 17 August 2026<br>
   <strong>Applies to:</strong> every Eluna application (listed below), on Android and iOS<br>
   <strong>Publisher and data controller:</strong> Serhii Vakulenchyk (&ldquo;Eluna&rdquo;, &ldquo;we&rdquo;)<br>
   <strong>Contact:</strong> <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a>
@@ -51,13 +51,13 @@
 
 <p><strong>Eluna has no accounts and no servers.</strong> There is no sign-up, no profile, and no
 database of ours anywhere with your name on it. What you write down in an Eluna
-app — your cycle, your books, your watch history — is stored
-in a database on your own phone, and we cannot read it, because there is nowhere
-for us to read it from.</p>
+app — your cycle, your books, your watch history, what you pay for every month — is
+stored in a database on your own phone, and we cannot read it, because there is
+nowhere for us to read it from.</p>
 
 <p>That is not the whole story, and the rest of this page is the rest of the story.
 An app that has to tell you when the next episode airs must ask somebody. An app
-that shows an ad must talk to the ad network. Every one of those requests goes
+that converts today's exchange rate must fetch one. Every one of those requests goes
 <strong>directly from your phone</strong> to that service — never through a server of ours —
 and every one of them is listed below, with how to stop it where stopping it is
 possible.</p>
@@ -73,6 +73,8 @@ device is spelled out <strong>per app</strong>, and the annex at the end is the 
 <tr><td><strong>Eluna Cycle</strong></td><td><code>com.eluna.cycle</code></td><td>Menstrual-cycle and symptom tracker</td></tr>
 <tr><td><strong>Eluna Reader</strong></td><td><code>com.eluna.reader</code></td><td>E-book reader for books you own</td></tr>
 <tr><td><strong>Eluna Screen</strong></td><td><code>com.eluna.screen</code></td><td>TV, film and anime tracker</td></tr>
+<tr><td><strong>Eluna Media</strong></td><td><code>com.eluna.media</code></td><td>On-device video, audio, image and GIF converter</td></tr>
+<tr><td><strong>Eluna Subs</strong></td><td><code>com.eluna.subs</code></td><td>Subscription and recurring-payment tracker</td></tr>
 </table>
 </div>
 
@@ -89,10 +91,11 @@ measure what you tap, read, watch, or log.</li>
 on your device and stays there.</li>
 <li><strong>No data brokers.</strong> We do not sell, rent or share your data. There is no
 mechanism by which we could.</li>
-<li><strong>No personalized advertising.</strong> Where ads appear, they are always requested as
-<strong>non-personalized</strong>: they are not chosen using a profile of you or of what you
-have done in the app. <strong>Eluna Screen from version 1.0.4 shows no ads at all</strong>
-and carries no advertising code — see the section below.</li>
+<li><strong>Almost no advertising left, and never personalized.</strong> Every app on this page
+is now ad-free except <strong>Eluna Cycle on Android</strong>, which still carries the banner
+described below until its next update reaches Google Play. Where that banner
+appears it is requested as <strong>non-personalized</strong>: never chosen from a profile of you
+or of what you have done in the app.</li>
 <li><strong>No profiling of the contents.</strong> No Eluna app sends what you <em>wrote</em> anywhere
 for analysis. Not your symptoms, not your notes, not your diary.</li>
 </ul>
@@ -113,6 +116,14 @@ and a full-text index of your books. All local.</li>
 <li><strong>Eluna Screen</strong> — what you track, what you have watched and when, your diary
 entries, ratings, notes, goals, collections, and any photos you attach to a
 diary entry.</li>
+<li><strong>Eluna Media</strong> — the files you convert and the files it produces, plus the
+queue and the history of past jobs. The originals never leave the app, and the
+results are written where you tell the app to write them.</li>
+<li><strong>Eluna Subs</strong> — your subscriptions, prices, billing dates, payment methods as
+you label them, categories and notes. The database is encrypted with
+<strong>SQLCipher (AES-256)</strong>; the key is generated on the device and kept in the
+Android Keystore or the iOS Keychain, never in the database, the preferences or
+an export.</li>
 </ul>
 
 <p><strong>Uninstalling an app deletes all of it.</strong> That is the flip side of local-first,
@@ -123,36 +134,39 @@ and it is stated again under <em>Your responsibility</em> below.</p>
 <p>Each item below is a <strong>direct call from your phone to that service</strong>, so that
 service sees your IP address. None of it passes through a server of ours.</p>
 
-<h3>1. Advertising — Eluna Cycle, Eluna Reader</h3>
+<h3>1. Advertising — Eluna Cycle on Android only</h3>
 
-<p><strong>Eluna Screen is going ad-free.</strong> The advertising SDK was removed from the app
-outright in <strong>version 1.0.4</strong>: no banner, no ad request, no consent form and no
-advertising identifier, because no advertising code is left in the app to use one.
-It is funded by optional tips instead, described under <em>Purchases</em> below.</p>
+<p><strong>Eluna went ad-free.</strong> The advertising SDK, its consent flow and the advertising
+identifier were removed outright: from <strong>Eluna Screen</strong> in version 1.0.4, and from
+<strong>Eluna Cycle</strong> in the build now on the App Store. <strong>Eluna Reader</strong>, <strong>Eluna Media</strong>
+and <strong>Eluna Subs</strong> have never shipped an ad and contain no advertising code at all.
+The apps are funded by optional tips instead, described under <em>Purchases</em> below.</p>
 
-<p>That is not yet true of every copy in the wild. The build on the App Store today
-is older than 1.0.4 and still carries the banner described in the rest of this
-section; it stops the moment the ad-free update passes review, and this caveat
-goes with it. Check <em>Settings → About</em> for the version you have.</p>
+<p>One copy in the wild is still behind: <strong>Eluna Cycle on Google Play</strong>. Its ad-free
+build exists and is on the App Store, but the Android release is held up, so the
+version you can install from Play today still carries the banner described in the
+rest of this section. When that update ships, this section goes with it. Check
+<em>Settings → About</em> for the version you have.</p>
 
-<p>Where a banner does appear — Eluna Cycle, Eluna Reader, and Eluna Screen before
-1.0.4 — it is a single one. Never an interstitial, never a rewarded video.</p>
+<p>Where that banner appears it is a single one. Never an interstitial, never a
+rewarded video.</p>
 
 <p>It does not appear at all:</p>
 
 <ul>
 <li>during the first two weeks after you install the app;</li>
-<li>ever again, once you buy the one-time &ldquo;remove ads&rdquo; purchase.</li>
+<li>ever again, once you bought the one-time &ldquo;remove ads&rdquo; purchase — which is no
+longer sold, because the ads are going away for everyone.</li>
 </ul>
 
 <p>When it does appear, it is served by <strong>Google AdMob</strong>, which receives your IP
-address, your device model and OS, and — in the apps that have not removed the
-permission — your device's <strong>advertising identifier</strong>. Ads are requested as
+address, your device model and OS, and your device's <strong>advertising identifier</strong>.
+Ads are requested as
 <strong>non-personalized</strong>: they are never chosen from a profile of you or of what you
 have done in the app. AdMob still uses the identifier for frequency capping and
 fraud prevention, and that is why consent matters where the law requires it.</p>
 
-<p><strong>In the EEA, the UK and Switzerland, any app that shows one asks first.</strong> Google's
+<p><strong>In the EEA, the UK and Switzerland, an app that shows one asks first.</strong> Google's
 consent form is shown before the advertising SDK is started, and if you decline it
 is <strong>never started at all</strong> — no ad request, no identifier, no ad. You can change
 your answer at any time from the app's settings, under <em>Ad privacy</em>. Outside those
@@ -164,20 +178,21 @@ regions no form is required and none is shown.</p>
 <p><strong>Legal basis:</strong> consent (Art. 6(1)(a)) where required; otherwise our legitimate
 interest in funding a free app (Art. 6(1)(f)).</p>
 
-<h3>2. Purchases — &ldquo;remove ads&rdquo; in Eluna Cycle and Eluna Reader, tips in Eluna Screen</h3>
+<h3>2. Purchases — tips, in every app</h3>
 
 <p>Handled entirely by <strong>Google Play Billing</strong> or the <strong>Apple App Store</strong>. They tell
 the app whether the purchase exists; we never see your payment details, your card,
 or your name. <strong>No third-party purchase-validation service is used</strong> — no
 RevenueCat, no receipt server of ours.</p>
 
-<p><strong>From 1.0.4 Eluna Screen has nothing to unlock.</strong> Its purchases are tips, of a
-few sizes, and they buy no feature: the app is the same before and after. Not
-tipping costs you nothing and hides nothing. Earlier versions sold a
-&ldquo;remove ads&rdquo; purchase instead; if you bought it, there is nothing left for it to
-do — the update removes the ads for everyone.</p>
+<p><strong>There is nothing to unlock in any Eluna app.</strong> Every purchase is a tip, of a few
+sizes, and it buys no feature: the app is the same before and after. Not tipping
+costs you nothing and hides nothing. Older versions of Eluna Cycle and Eluna Screen
+sold a &ldquo;remove ads&rdquo; purchase instead; it is no longer offered, and
+if you bought it there is nothing left for it to do — the ads are being removed for
+everyone.</p>
 
-<h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader</h3>
+<h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader, Eluna Subs</h3>
 
 <p><strong>Eluna Screen</strong> queries the public catalogues it needs to know anything about a
 show at all: <strong>TMDB</strong>, <strong>TVmaze</strong>, <strong>Kitsu</strong>, <strong>Shikimori</strong> and <strong>Simkl</strong>. They
@@ -215,6 +230,24 @@ own file leaves the device, they are opt-in, and they are per-tap.</p>
 <p>OCR language models are downloaded from GitHub when you enable a language; the
 OCR itself runs on the device.</p>
 
+<p><strong>Eluna Subs</strong> fetches <strong>exchange rates</strong> so that subscriptions billed in other
+currencies can be totalled in yours. The request goes to <code>open.er-api.com</code>, or to
+<code>cdn.jsdelivr.net</code> if that is unreachable; it asks for the whole rate table and
+sends nothing about you — not which currencies you use, not what you pay. Those
+services see your IP address and nothing else. If you never refresh the rates, the
+app never makes the call.</p>
+
+<p>Two further things in that app are yours to trigger. Importing a subscription
+<strong>from a screenshot</strong> reads the picture <em>on the device</em>; the recognition models are
+downloaded once from <strong>GitHub</strong> for the language you pick, and the screenshot itself
+is never uploaded anywhere. And the <em>Manage</em> button opens the provider's own
+cancellation page <strong>in your browser</strong> — from that point you are on Netflix's or
+Spotify's site, under their privacy policy, not ours.</p>
+
+<p><strong>Eluna Media asks nobody anything.</strong> It contains no network code: no catalogue, no
+rates, no model download, no update check. Conversion runs entirely on your phone,
+and the only address in the whole app is the link to this page.</p>
+
 <h3>4. App updates — Eluna Cycle</h3>
 
 <p>Eluna Cycle checks for a code update from <strong>Expo's update service</strong>
@@ -223,9 +256,9 @@ runtime version and your IP address. It carries <strong>none of your data</stron
 app downloads its knowledge-base language packs from <strong>GitHub</strong> on demand, which
 tells GitHub your IP and which language you asked for.</p>
 
-<h3>5. Cloud backup — Eluna Screen, Eluna Reader</h3>
+<h3>5. Cloud backup — Eluna Screen, Eluna Reader, Eluna Subs</h3>
 
-<p>Both offer an <strong>end-to-end encrypted</strong> backup: the library is packaged and
+<p>Each offers an <strong>end-to-end encrypted</strong> backup: the library is packaged and
 encrypted <strong>on your phone</strong> with a key derived from a password only you know, and
 the sealed file is placed in <strong>your own</strong> Google Drive (in the app's hidden
 <code>appDataFolder</code>, from which the app can see none of your other files) or, on iOS,
@@ -246,7 +279,13 @@ the app no account details.</p>
 choose and configure</em>. Those are your servers; what the app sends them (reading
 progress, statistics, a backup archive) goes to you, not to us.</p>
 
-<h3>6. Support emails — Eluna Cycle, Eluna Reader, Eluna Screen</h3>
+<p><strong>Eluna Subs</strong> syncs the same way, and it is how the same subscriptions appear on a
+second device: the encrypted vault travels through your Drive or iCloud, and the
+password that opens it is set by you on the first device and typed again on the
+second. It is never sent anywhere, so a forgotten one cannot be recovered by us or
+by anyone.</p>
+
+<h3>6. Support emails — every app</h3>
 
 <p>If you write to support from inside an app, the app can attach diagnostic
 information. <strong>It is shown to you, in the draft, before you send it, and you send
@@ -292,18 +331,22 @@ to your system's share sheet and does not know what you pick.</p>
 <tr><td>Eluna Cycle</td><td>PDF report for a doctor</td><td>Optional password protection; <strong>unencrypted if you do not set one</strong></td></tr>
 <tr><td>Eluna Screen</td><td>encrypted vault file</td><td><strong>Yes</strong> — same sealed vault used for cloud backup</td></tr>
 <tr><td>Eluna Reader</td><td><code>.elunabackup</code> archive</td><td><strong>No.</strong> It is a ZIP. The password you set is only checked on restore — it does <strong>not</strong> encrypt the archive, and anything that opens ZIPs can read it</td></tr>
+<tr><td>Eluna Subs</td><td>JSON export</td><td><strong>Yes by default</strong> — AES-256-GCM, key derived with PBKDF2-HMAC-SHA256 over 210,000 iterations. You can switch the password off, and then it is plain readable JSON</td></tr>
 </table>
 </div>
 
-<p>That last row is a fact, not a feature, and it is here because a backup you
+<p>The Reader row is a fact, not a feature, and it is here because a backup you
 believe is encrypted and is not is worse than one you know is not.</p>
+
+<p>Eluna Media has nothing of this kind: it keeps no library of yours to export. The
+files it produces are the output, and you already chose where they go.</p>
 
 <h2 id="children">Children</h2>
 
 <p>No Eluna app is directed to children under 13 (under 16 in the EEA), and we do not
-knowingly collect data from them. Ads, in the apps that still show them, are
-non-personalized for everyone regardless of age; Eluna Screen from 1.0.4 shows
-none. If you believe a child has provided personal data through an Eluna app,
+knowingly collect data from them. Only one app still shows an ad at all — Eluna
+Cycle on Android — and it is non-personalized for everyone regardless of age.
+If you believe a child has provided personal data through an Eluna app,
 write to us and we will help you delete it — though in nearly every case the data
 is on the device and deleting the app deletes it.</p>
 
@@ -317,8 +360,8 @@ yourself, immediately, without asking us:</p>
 <li><strong>Erasure</strong> — uninstall the app. If you enabled cloud backup, delete the vault
 as well (in the app: <em>Cloud sync → Delete the cloud copy</em>).</li>
 <li><strong>Withdraw consent</strong> — turn off the feature that asked for it: ads consent (EEA
-users of Eluna Cycle and Eluna Reader, in Settings), translation, cloud backup, or
-the support-email diagnostics.</li>
+users of Eluna Cycle on Android, in Settings), translation, cloud backup, or the
+support-email diagnostics.</li>
 <li><strong>Object, or complain</strong> — write to <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a>, or to your national
 data-protection authority.</li>
 </ul>
@@ -365,9 +408,11 @@ the app shows you are yours.</p>
 produces is informational. It is computed by arithmetic on the device, it can be
 wrong, and it is not advice.</p>
 
-<p><strong>Content you bring.</strong> Eluna Reader opens books you supply. Whether you have the
-right to a given file is between you and whoever holds its copyright; Eluna hosts
-no books and provides no library of copyrighted works.</p>
+<p><strong>Content you bring.</strong> Eluna Reader opens books you supply, and Eluna Media
+converts files you supply. Whether you have the right to a given file — to read it,
+to convert it, to keep the result — is between you and whoever holds its copyright;
+Eluna hosts no content, provides no library of copyrighted works, and neither app
+removes or circumvents any copy protection.</p>
 
 <p><strong>Liability.</strong> To the extent the law allows, we are not liable for data loss caused
 by device failure, OS updates, uninstalling an app, or a lost password. Nothing
@@ -381,20 +426,20 @@ their terms; refund requests go to them, not to us.</p>
 
 <div class="tablewrap">
 <table>
-<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th></tr>
-<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td></tr>
-<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td></tr>
-<tr><td>Ads (AdMob, non-personalized)</td><td>yes</td><td>yes</td><td><strong>removed in 1.0.4</strong>; yes before</td></tr>
-<tr><td>EEA consent form (UMP), SDK off until answered</td><td>yes</td><td>yes</td><td>only before 1.0.4</td></tr>
-<tr><td>In-app purchase</td><td>remove ads</td><td>remove ads (Pro)</td><td>tips, unlock nothing (was: remove ads)</td></tr>
-<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td></tr>
-<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td></tr>
-<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td></tr>
-<tr><td>Cloud backup</td><td>—</td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td></tr>
-<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td></tr>
+<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th></tr>
+<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td></tr>
+<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td></tr>
+<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td></tr>
+<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td></tr>
+<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
+<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td></tr>
+<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Cloud backup</td><td>—</td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td></tr>
+<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td></tr>
 </table>
 </div>
 

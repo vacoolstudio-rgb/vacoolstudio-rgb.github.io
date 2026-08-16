@@ -109,7 +109,8 @@ for analysis. Not your symptoms, not your notes, not your diary.</li>
 (including intimate ones), moods, medications, notes, and your app PIN.
 Stored in a local SQLite database; the more sensitive fields (notes,
 intensities, temperature, sexual activity, exact times) are encrypted with a
-key held in the device keystore.</li>
+key held in the device keystore. If you turn cloud sync on, a sealed copy of that
+history also lives in your own iCloud or Drive — see <em>Cloud backup</em> below.</li>
 <li><strong>Eluna Reader</strong> — the book files you import, their covers, your reading
 position, highlights, notes, bookmarks, reading statistics, looked-up words,
 and a full-text index of your books. All local.</li>
@@ -256,7 +257,7 @@ runtime version and your IP address. It carries <strong>none of your data</stron
 app downloads its knowledge-base language packs from <strong>GitHub</strong> on demand, which
 tells GitHub your IP and which language you asked for.</p>
 
-<h3>5. Cloud backup — Eluna Screen, Eluna Reader, Eluna Subs</h3>
+<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs</h3>
 
 <p>Each offers an <strong>end-to-end encrypted</strong> backup: the library is packaged and
 encrypted <strong>on your phone</strong> with a key derived from a password only you know, and
@@ -285,6 +286,19 @@ password that opens it is set by you on the first device and typed again on the
 second. It is never sent anywhere, so a forgotten one cannot be recovered by us or
 by anyone.</p>
 
+<p><strong>Eluna Cycle now offers this too, and it deserves saying plainly, because what
+travels is health data.</strong> The feature is <strong>off until you switch it on</strong>. When you do,
+the app asks for a password, derives the key from it <em>on the device</em> with
+<strong>Argon2id</strong>, seals your cycle history into a vault and puts that file in <strong>your own</strong>
+iCloud container (iOS) or the hidden <code>appDataFolder</code> of <strong>your own</strong> Google Drive
+(Android). Apple and Google hold a file they cannot read. Neither can we: the
+password is never sent anywhere, and the one-time recovery code shown when you turn
+the feature on is the only other way in — we cannot reset either.</p>
+
+<p>The version of Eluna Cycle on <strong>Google Play</strong> is older than this feature and does
+not offer it at all. On that build, nothing about your cycle leaves the phone
+except by the support email below or a backup file you export yourself.</p>
+
 <h3>6. Support emails — every app</h3>
 
 <p>If you write to support from inside an app, the app can attach diagnostic
@@ -304,12 +318,16 @@ pressed send.</p>
 data</strong> under Art. 9 GDPR. We treat it accordingly:</p>
 
 <ul>
-<li>It is stored <strong>only on your device</strong>. It is not uploaded, not synced, not
-analysed by us, and not shared with anyone.</li>
+<li>It is stored <strong>on your device</strong>. It is not sent to us, not analysed by us, and
+not shared with anyone. <strong>We have no copy and no way to obtain one.</strong></li>
 <li>Predictions and insights are computed <strong>on the device</strong>. There is no AI service,
 no remote model, and no server involved.</li>
-<li>The only path by which it can leave the phone is the support email described
-above, and the backup file you export yourself.</li>
+<li>It leaves the phone by exactly three paths, all of which you open yourself: the
+support email described above, a backup file you export, and — if you switch cloud
+sync on — the <strong>encrypted vault</strong> in your own iCloud or Google Drive. In that last
+case it travels <strong>sealed</strong>: encrypted on the device with a key derived from your
+password, unreadable to Apple, to Google and to us. Leave sync off and no copy
+exists outside the phone at all.</li>
 <li><strong>Legal basis:</strong> your explicit consent (Art. 9(2)(a)), given by entering the
 data and, for the support email, by ticking the box.</li>
 </ul>
@@ -438,7 +456,7 @@ their terms; refund requests go to them, not to us.</p>
 <tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td></tr>
 <tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Cloud backup</td><td>—</td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td></tr>
+<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td></tr>
 <tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td></tr>
 </table>
 </div>

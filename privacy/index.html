@@ -75,6 +75,7 @@ device is spelled out <strong>per app</strong>, and the annex at the end is the 
 <tr><td><strong>Eluna Screen</strong></td><td><code>com.eluna.screen</code></td><td>TV, film and anime tracker</td></tr>
 <tr><td><strong>Eluna Media</strong></td><td><code>com.eluna.media</code></td><td>On-device video, audio, image and GIF converter</td></tr>
 <tr><td><strong>Eluna Subs</strong></td><td><code>com.eluna.subs</code></td><td>Subscription and recurring-payment tracker</td></tr>
+<tr><td><strong>Eluna Budget</strong></td><td><code>com.eluna.budget</code></td><td>Expense tracker with budgets, envelopes and goals</td></tr>
 </table>
 </div>
 
@@ -125,6 +126,13 @@ you label them, categories and notes. The database is encrypted with
 <strong>SQLCipher (AES-256)</strong>; the key is generated on the device and kept in the
 Android Keystore or the iOS Keychain, never in the database, the preferences or
 an export.</li>
+<li><strong>Eluna Budget</strong> — your accounts, transactions and their splits, categories,
+payees, tags, budgets and envelopes, goals, debts, recurring rules,
+reconciliations and receipt attachments. The database is encrypted with
+<strong>SQLCipher (AES-256)</strong>; the key is generated on the device and kept in the
+Android Keystore or the iOS Keychain, never in the database, the preferences or
+an export. There is no bank connection and no aggregator: figures are typed in,
+imported from a statement you pick, or read from a receipt photo on the device.</li>
 </ul>
 
 <p><strong>Uninstalling an app deletes all of it.</strong> That is the flip side of local-first,
@@ -139,8 +147,9 @@ service sees your IP address. None of it passes through a server of ours.</p>
 
 <p><strong>Eluna went ad-free.</strong> The advertising SDK, its consent flow and the advertising
 identifier were removed outright: from <strong>Eluna Screen</strong> in version 1.0.4, and from
-<strong>Eluna Cycle</strong> in the build now on the App Store. <strong>Eluna Reader</strong>, <strong>Eluna Media</strong>
-and <strong>Eluna Subs</strong> have never shipped an ad and contain no advertising code at all.
+<strong>Eluna Cycle</strong> in the build now on the App Store. <strong>Eluna Reader</strong>, <strong>Eluna Media</strong>,
+<strong>Eluna Subs</strong> and <strong>Eluna Budget</strong> have never shipped an ad and contain no
+advertising code at all.
 The apps are funded by optional tips instead, described under <em>Purchases</em> below.</p>
 
 <p>One copy in the wild is still behind: <strong>Eluna Cycle on Google Play</strong>. Its ad-free
@@ -231,8 +240,8 @@ own file leaves the device, they are opt-in, and they are per-tap.</p>
 <p>OCR language models are downloaded from GitHub when you enable a language; the
 OCR itself runs on the device.</p>
 
-<p><strong>Eluna Subs</strong> fetches <strong>exchange rates</strong> so that subscriptions billed in other
-currencies can be totalled in yours. The request goes to <code>open.er-api.com</code>, or to
+<p><strong>Eluna Subs</strong> and <strong>Eluna Budget</strong> fetch <strong>exchange rates</strong> so that amounts
+billed in other currencies can be totalled in yours. The request goes to <code>open.er-api.com</code>, or to
 <code>cdn.jsdelivr.net</code> if that is unreachable; it asks for the whole rate table and
 sends nothing about you — not which currencies you use, not what you pay. Those
 services see your IP address and nothing else. If you never refresh the rates, the
@@ -257,7 +266,7 @@ runtime version and your IP address. It carries <strong>none of your data</stron
 app downloads its knowledge-base language packs from <strong>GitHub</strong> on demand, which
 tells GitHub your IP and which language you asked for.</p>
 
-<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs</h3>
+<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs, Eluna Budget</h3>
 
 <p>Each offers an <strong>end-to-end encrypted</strong> backup: the library is packaged and
 encrypted <strong>on your phone</strong> with a key derived from a password only you know, and
@@ -349,6 +358,8 @@ to your system's share sheet and does not know what you pick.</p>
 <tr><td>Eluna Cycle</td><td>PDF report for a doctor</td><td>Optional password protection; <strong>unencrypted if you do not set one</strong></td></tr>
 <tr><td>Eluna Screen</td><td>encrypted vault file</td><td><strong>Yes</strong> — same sealed vault used for cloud backup</td></tr>
 <tr><td>Eluna Reader</td><td><code>.elunabackup</code> archive</td><td><strong>No.</strong> It is a ZIP. The password you set is only checked on restore — it does <strong>not</strong> encrypt the archive, and anything that opens ZIPs can read it</td></tr>
+<tr><td>Eluna Budget</td><td>JSON export</td><td><strong>No</strong> — plain readable JSON, so anything can read your data back. That is the point of it: you can leave whenever you want</td></tr>
+<tr><td>Eluna Budget</td><td>encrypted backup</td><td><strong>Yes</strong> — AES-256-GCM, key derived with PBKDF2-HMAC-SHA256 over 210,000 iterations. A separate file from the plain export, meant for a messenger or a flash drive</td></tr>
 <tr><td>Eluna Subs</td><td>JSON export</td><td><strong>Yes by default</strong> — AES-256-GCM, key derived with PBKDF2-HMAC-SHA256 over 210,000 iterations. You can switch the password off, and then it is plain readable JSON</td></tr>
 </table>
 </div>
@@ -444,20 +455,20 @@ their terms; refund requests go to them, not to us.</p>
 
 <div class="tablewrap">
 <table>
-<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th></tr>
-<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td></tr>
-<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td></tr>
-<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td></tr>
-<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td></tr>
-<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
-<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td></tr>
-<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td></tr>
-<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td></tr>
+<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th><th>Eluna Budget</th></tr>
+<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td><td>what you earn and spend</td></tr>
+<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td><strong>whole database</strong> — SQLCipher AES-256</td></tr>
+<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td><td>never</td></tr>
+<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
+<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td></tr>
+<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td><td>only via support email, opt-in</td></tr>
+<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td><td>Drive / iCloud (E2E)</td></tr>
+<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td><td>optional — plain JSON, plus a separate encrypted file</td></tr>
 </table>
 </div>
 

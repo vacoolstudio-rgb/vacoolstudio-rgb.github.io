@@ -26,7 +26,7 @@
 <h1>Eluna — Privacy Policy and Terms of Use</h1>
 
 <div class="meta">
-  <strong>Effective:</strong> 17 August 2026<br>
+  <strong>Effective:</strong> 28 August 2026<br>
   <strong>Applies to:</strong> every Eluna application (listed below), on Android and iOS<br>
   <strong>Publisher and data controller:</strong> Serhii Vakulenchyk (&ldquo;Eluna&rdquo;, &ldquo;we&rdquo;)<br>
   <strong>Contact:</strong> <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a>
@@ -154,8 +154,8 @@ service sees your IP address. None of it passes through a server of ours.</p>
 <p><strong>Eluna went ad-free.</strong> The advertising SDK, its consent flow and the advertising
 identifier were removed outright: from <strong>Eluna Screen</strong> in version 1.0.4, and from
 <strong>Eluna Cycle</strong> in the build now on the App Store. <strong>Eluna Reader</strong>, <strong>Eluna Media</strong>,
-<strong>Eluna Subs</strong> and <strong>Eluna Budget</strong> have never shipped an ad and contain no
-advertising code at all.
+<strong>Eluna Subs</strong>, <strong>Eluna Budget</strong> and <strong>Eluna Kitchen</strong> have never shipped an ad
+and contain no advertising code at all.
 The apps are funded by optional tips instead, described under <em>Purchases</em> below.</p>
 
 <p>One copy in the wild is still behind: <strong>Eluna Cycle on Google Play</strong>. Its ad-free
@@ -208,7 +208,7 @@ sold a &ldquo;remove ads&rdquo; purchase instead; it is no longer offered, and
 if you bought it there is nothing left for it to do — the ads are being removed for
 everyone.</p>
 
-<h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader, Eluna Subs</h3>
+<h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader, Eluna Subs, Eluna Kitchen</h3>
 
 <p><strong>Eluna Screen</strong> queries the public catalogues it needs to know anything about a
 show at all: <strong>TMDB</strong>, <strong>TVmaze</strong>, <strong>Kitsu</strong>, <strong>Shikimori</strong> and <strong>Simkl</strong>. They
@@ -281,7 +281,7 @@ runtime version and your IP address. It carries <strong>none of your data</stron
 app downloads its knowledge-base language packs from <strong>GitHub</strong> on demand, which
 tells GitHub your IP and which language you asked for.</p>
 
-<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs, Eluna Budget</h3>
+<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs, Eluna Budget, Eluna Kitchen</h3>
 
 <p>Each offers an <strong>end-to-end encrypted</strong> backup: the library is packaged and
 encrypted <strong>on your phone</strong> with a key derived from a password only you know, and
@@ -310,6 +310,14 @@ password that opens it is set by you on the first device and typed again on the
 second. It is never sent anywhere, so a forgotten one cannot be recovered by us or
 by anyone.</p>
 
+<p><strong>Eluna Kitchen</strong> syncs the same sealed vault through <strong>your own</strong> iCloud, and it is
+off until you turn it on. The payload — your food diary, weight entries, pantry,
+plan, shopping list and your own recipes — is gzipped and sealed with
+<strong>AES-GCM</strong> on the device; the key that opens it is derived from your password with
+<strong>Argon2id</strong> and never leaves the phone, which is why a forgotten password cannot be
+recovered by us or by anyone. A recovery code is offered at setup for exactly that
+reason.</p>
+
 <p><strong>Eluna Cycle now offers this too, and it deserves saying plainly, because what
 travels is health data.</strong> The feature is <strong>off until you switch it on</strong>. When you do,
 the app asks for a password, derives the key from it <em>on the device</em> with
@@ -336,7 +344,7 @@ and you can send the email without it. Read the draft before you send it — thi
 the one place where health data can leave your phone, and it leaves it because you
 pressed send.</p>
 
-<h2 id="health">Health data — Eluna Cycle</h2>
+<h2 id="health">Health data — Eluna Cycle and Eluna Kitchen</h2>
 
 <p>Everything Eluna Cycle records about your body is a <strong>special category of personal
 data</strong> under Art. 9 GDPR. We treat it accordingly:</p>
@@ -359,6 +367,31 @@ data and, for the support email, by ticking the box.</li>
 <blockquote><strong>Eluna Cycle is not a medical device.</strong> Its predictions cannot be used as
 contraception and do not replace a doctor. It is a diary with arithmetic on top.</blockquote>
 
+<p><strong>Eluna Kitchen</strong> holds health data of a different kind and treats it the same way:
+what you ate and when, your weight entries, and — if you enter them — your height,
+sex, age and activity level. All of it is a <strong>special category of personal data</strong>
+under Art. 9 GDPR, and all of it stays on the device.</p>
+
+<ul>
+<li>Daily targets are computed <strong>on the device</strong> by published arithmetic — the
+Mifflin-St Jeor or Katch-McArdle formula — and calibrated against your own weight
+log. No remote model, no AI service, no server.</li>
+<li>It leaves the phone by exactly two paths, both of which you open yourself: a
+backup file you export (plain JSON, so you can read it too), and — if you switch
+sync on — the <strong>sealed vault</strong> in your own iCloud. Leave sync off and no copy exists
+outside the phone at all.</li>
+<li>Nothing about your food is sent to any catalogue. The recipes and the food table
+ship inside the app; barcodes are looked up in a country pack you downloaded, on the
+device.</li>
+<li><strong>Legal basis:</strong> your explicit consent (Art. 9(2)(a)), given by entering the
+data.</li>
+</ul>
+
+<blockquote><strong>Eluna Kitchen is not a medical device and gives no dietary advice.</strong> The
+calories and targets it shows are arithmetic over the numbers you and the USDA food
+table supply; they do not replace a doctor or a dietitian, and no recipe in it is a
+treatment for anything.</blockquote>
+
 <h2 id="backups">Backups you make yourself</h2>
 
 <p>You can export your data. Where the file goes is your decision — the app hands it
@@ -376,6 +409,7 @@ to your system's share sheet and does not know what you pick.</p>
 <tr><td>Eluna Budget</td><td>JSON export</td><td><strong>No</strong> — plain readable JSON, so anything can read your data back. That is the point of it: you can leave whenever you want</td></tr>
 <tr><td>Eluna Budget</td><td>encrypted backup</td><td><strong>Yes</strong> — AES-256-GCM, key derived with PBKDF2-HMAC-SHA256 over 210,000 iterations. A separate file from the plain export, meant for a messenger or a flash drive</td></tr>
 <tr><td>Eluna Subs</td><td>JSON export</td><td><strong>Yes by default</strong> — AES-256-GCM, key derived with PBKDF2-HMAC-SHA256 over 210,000 iterations. You can switch the password off, and then it is plain readable JSON</td></tr>
+<tr><td>Eluna Kitchen</td><td>JSON export</td><td><strong>No</strong> — plain readable JSON, so anything can read your data back: your diary, weights, pantry, plan, shopping list, your recipes and your own barcodes. That is the point of it — you can leave whenever you want. The sealed vault used for iCloud sync is a separate thing and is encrypted</td></tr>
 </table>
 </div>
 

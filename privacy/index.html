@@ -76,6 +76,7 @@ device is spelled out <strong>per app</strong>, and the annex at the end is the 
 <tr><td><strong>Eluna Media</strong></td><td><code>com.eluna.media</code></td><td>On-device video, audio, image and GIF converter</td></tr>
 <tr><td><strong>Eluna Subs</strong></td><td><code>com.eluna.subs</code></td><td>Subscription and recurring-payment tracker</td></tr>
 <tr><td><strong>Eluna Budget</strong></td><td><code>com.eluna.budget</code></td><td>Expense tracker with budgets, envelopes and goals</td></tr>
+<tr><td><strong>Eluna Kitchen</strong></td><td><code>com.eluna.kitchen</code></td><td>Recipe book with computed nutrition, food diary and goals</td></tr>
 </table>
 </div>
 
@@ -133,6 +134,11 @@ reconciliations and receipt attachments. The database is encrypted with
 Android Keystore or the iOS Keychain, never in the database, the preferences or
 an export. There is no bank connection and no aggregator: figures are typed in,
 imported from a statement you pick, or read from a receipt photo on the device.</li>
+<li><strong>Eluna Kitchen</strong> — what you eat and when (the food diary, with portions and
+grams), your weight entries, what is in your pantry, your shopping list, your meal
+plan, the recipes you write yourself, your favourites, and any barcodes you add by
+hand. Height, weight, sex, age and activity level, if you enter them, are used to
+compute your daily targets and stay on the device.</li>
 </ul>
 
 <p><strong>Uninstalling an app deletes all of it.</strong> That is the flip side of local-first,
@@ -257,6 +263,15 @@ Spotify's site, under their privacy policy, not ours.</p>
 <p><strong>Eluna Media asks nobody anything.</strong> It contains no network code: no catalogue, no
 rates, no model download, no update check. Conversion runs entirely on your phone,
 and the only address in the whole app is the link to this page.</p>
+
+<p><strong>Eluna Kitchen asks no catalogue about your food.</strong> Its recipes and its food table
+ship inside the app and are read on the device; nothing you eat, weigh or plan is
+ever sent anywhere. The app downloads two kinds of file from <strong>GitHub</strong>, and both are
+plain public downloads that carry nothing of yours: the interface translation for
+the language you chose, and — only if you ask for it — the barcode pack for a country
+you pick, so that scanning a package works with no connection at all. Scanning
+itself is local: the camera reads the code on the device and looks it up in the pack
+you already downloaded.</p>
 
 <h3>4. App updates — Eluna Cycle</h3>
 
@@ -455,19 +470,19 @@ their terms; refund requests go to them, not to us.</p>
 
 <div class="tablewrap">
 <table>
-<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th><th>Eluna Budget</th></tr>
-<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td><td>what you earn and spend</td></tr>
-<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td><strong>whole database</strong> — SQLCipher AES-256</td></tr>
-<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td><td>never</td></tr>
-<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
-<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td></tr>
-<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td><td>only via support email, opt-in</td></tr>
-<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td><td>Drive / iCloud (E2E)</td></tr>
+<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th><th>Eluna Budget</th><th>Eluna Kitchen</th></tr>
+<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td><td>what you earn and spend</td><td><strong>health</strong> — what you eat and your weight</td></tr>
+<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td>none (device storage)</td></tr>
+<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td><td>never</td><td>never</td></tr>
+<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
+<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td><td>no catalogue; downloads translation and optional barcode packs from GitHub</td></tr>
+<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td><td>only via support email, opt-in</td><td>—</td></tr>
+<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td><td>Drive / iCloud (E2E)</td><td>iCloud (E2E), opt-in</td></tr>
 <tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td><td>optional — plain JSON, plus a separate encrypted file</td></tr>
 </table>
 </div>

@@ -487,6 +487,24 @@ footer.site {
 footer.site a { color: var(--text-dim); }
 footer.site a:hover { color: var(--accent); }
 
+/* Уведомление о шрифте занимает всю ширину и написано мельче остального: по
+   OFL 1.1 оно обязано ехать вместе со шрифтом, но это сноска, а не второй
+   заголовок подвала. */
+footer.site .fine {
+  flex-basis: 100%;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+/* Оговорка в карточке приложения: она обязана быть заметна, но не спорить с
+   описанием — поэтому мельче и приглушённее, сразу под ним. */
+.app-card .note {
+  margin: 0 0 4px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  opacity: 0.85;
+}
+
 @media (max-width: 560px) {
   .hero { padding-top: 40px; }
   nav.site a { margin-left: 14px; }

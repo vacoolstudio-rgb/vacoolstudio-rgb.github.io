@@ -496,14 +496,6 @@ footer.site .fine {
   opacity: 0.8;
 }
 
-/* Оговорка в карточке приложения: она обязана быть заметна, но не спорить с
-   описанием — поэтому мельче и приглушённее, сразу под ним. */
-.app-card .note {
-  margin: 0 0 4px;
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  opacity: 0.85;
-}
 
 @media (max-width: 560px) {
   .hero { padding-top: 40px; }

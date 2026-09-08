@@ -38,7 +38,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from site_data import APPS, PROMISES, SITE  # noqa: E402
+from site_data import (APPS, PROMISES, SITE, is_released,  # noqa: E402
+                       released_apps, upcoming_apps)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -211,7 +212,7 @@ def app_page(app):
     others = '\n'.join(
         '      <li><a href="%s">%s</a> <span class="kind">%s</span></li>'
         % (path_for(o['slug']), E(o['name']), E(o['tagline']))
-        for o in APPS if o['slug'] != app['slug']
+        for o in released_apps() if o['slug'] != app['slug']
     )
 
     return (
@@ -266,7 +267,7 @@ def index_page():
                    'expense tracker, ebook reader, converter. No accounts, no analytics.')
 
     cards = []
-    for app in APPS:
+    for app in released_apps():
         cards.append(f'''    <li class="app-card">
       <a class="card-link" href="{path_for(app['slug'])}">
         <img class="icon" src="/icons/{app['icon']}" width="192" height="192"
@@ -278,6 +279,17 @@ def index_page():
         {store_links(app)}
       </div>
     </li>''')
+
+    # Приложения в работе — одной строкой, без собственных адресов. Человеку
+    # видно, что проект живой; поисковику не достаётся страниц, которым нечего
+    # сказать.
+    upcoming = upcoming_apps()
+    in_progress = ''
+    if upcoming:
+        names = ', '.join(E(a['name']) for a in upcoming)
+        in_progress = ('\n  <h2>In the works</h2>\n'
+                       '  <p class="lede">%s. Each gets its own page here the day '
+                       'it reaches the store.</p>\n' % names)
 
     promises = '\n'.join('    <li>%s</li>' % E(p) for p in PROMISES)
 
@@ -316,6 +328,7 @@ def index_page():
   <ul class="apps">
 {chr(10).join(cards)}
   </ul>
+{in_progress}
 
   <h2>One policy, honestly written</h2>
   <p>Every Eluna app is covered by a single
@@ -329,7 +342,9 @@ def index_page():
 
 
 def sitemap():
-    urls = [path_for(), '/privacy/'] + [path_for(a['slug']) for a in APPS]
+    # Только то, что существует: адрес в карте сайта, отдающий 404, — это ошибка
+    # обхода в Search Console, а не отсутствующая страница.
+    urls = [path_for(), '/privacy/'] + [path_for(a['slug']) for a in released_apps()]
     entries = '\n'.join(
         '  <url><loc>%s%s</loc></url>' % (SITE['domain'], u) for u in urls
     )
@@ -376,7 +391,7 @@ def check_seo():
     """
     seen = {}
     problems = []
-    for app in APPS:
+    for app in released_apps():
         title, desc = app['seo_title'], app['seo_description']
         if len(title) > 60:
             problems.append('%s: title %d знаков (>60)' % (app['slug'], len(title)))
@@ -399,7 +414,7 @@ def main():
     changed = []
 
     write('index.html', index_page(), check, changed)
-    for app in APPS:
+    for app in released_apps():
         write('%s/index.html' % app['slug'], app_page(app), check, changed)
     write('sitemap.xml', sitemap(), check, changed)
     write('robots.txt', robots(), check, changed)
@@ -409,10 +424,10 @@ def main():
         if changed:
             raise SystemExit('расходятся с данными (%d): %s\nзапустите '
                              'tools/build_site.py' % (len(changed), ' '.join(changed)))
-        print('%d страниц приложений + главная: собрано' % len(APPS))
+        print('%d страниц приложений + главная: собрано' % len(released_apps()))
     else:
-        print('%d страниц приложений + главная, записано файлов: %d'
-              % (len(APPS), len(changed)))
+        print('%d страниц приложений (+%d в работе), записано файлов: %d'
+              % (len(released_apps()), len(upcoming_apps()), len(changed)))
 
 
 if __name__ == '__main__':

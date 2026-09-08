@@ -339,6 +339,13 @@ def sitemap():
             + entries + '\n</urlset>\n')
 
 
+# Ключ IndexNow. Bing, Yandex и Seznam принимают уведомление об изменившихся
+# адресах только если по адресу  лежит файл с этим же ключом — так
+# они проверяют, что уведомляет владелец сайта. Google протокол не поддерживает:
+# туда адреса попадают через Search Console и sitemap.
+INDEXNOW_KEY = '04ca432d89444214907e84081c0d30a3'
+
+
 def robots():
     return ('User-agent: *\n'
             'Allow: /\n\n'
@@ -396,6 +403,7 @@ def main():
         write('%s/index.html' % app['slug'], app_page(app), check, changed)
     write('sitemap.xml', sitemap(), check, changed)
     write('robots.txt', robots(), check, changed)
+    write('%s.txt' % INDEXNOW_KEY, INDEXNOW_KEY + chr(10), check, changed)
 
     if check:
         if changed:

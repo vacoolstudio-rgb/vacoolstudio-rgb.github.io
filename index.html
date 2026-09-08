@@ -3,19 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eluna — local-first apps</title>
-<meta name="description" content="Eluna builds local-first Android and iOS apps: no accounts, no servers, no analytics. Your data stays on your device.">
-<link rel="stylesheet" href="styles.css">
+<title>Eluna — local-first apps with no account and no ads</title>
+<meta name="description" content="Local-first iPhone and Android apps: period tracker, TV show tracker, expense tracker, ebook reader, converter. No accounts, no analytics.">
+<link rel="canonical" href="https://eluna-apps.com/">
+<link rel="alternate" hreflang="en" href="https://eluna-apps.com/">
+<link rel="alternate" hreflang="x-default" href="https://eluna-apps.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Eluna">
+<meta property="og:title" content="Eluna — local-first apps with no account and no ads">
+<meta property="og:description" content="Local-first iPhone and Android apps: period tracker, TV show tracker, expense tracker, ebook reader, converter. No accounts, no analytics.">
+<meta property="og:url" content="https://eluna-apps.com/">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Eluna",
+  "url": "https://eluna-apps.com/",
+  "email": "support@eluna-apps.com",
+  "founder": {"@type": "Person", "name": "Serhii Vakulenchyk"}
+}
+</script>
 </head>
 <body>
 <div class="ambient"></div>
 <div class="wrap">
 
 <header class="site">
-  <a class="brand" href="index.html">Eluna<span>.</span></a>
+  <a class="brand" href="/">Eluna<span>.</span></a>
   <nav class="site">
-    <a href="privacy/index.html">Privacy &amp; Terms</a>
+    <a href="/#apps">Apps</a>
+    <a href="/privacy/">Privacy &amp; Terms</a>
     <a href="mailto:support@eluna-apps.com">Support</a>
   </nav>
 </header>
@@ -25,10 +45,10 @@
     <h1>Apps that keep your life <em>on your phone</em>.</h1>
     <p class="tagline">Eluna builds local-first apps for Android and iOS. No accounts,
     no servers of ours, no analytics — what you write down stays in a database on
-    your own device, and we couldn't read it if we wanted to.</p>
+    your own device, and we couldn’t read it if we wanted to.</p>
     <div class="cta">
       <a class="btn primary" href="#apps">See the apps</a>
-      <a class="btn ghost" href="privacy/index.html">Read the privacy policy</a>
+      <a class="btn ghost" href="/privacy/">Read the privacy policy</a>
     </div>
   </section>
 
@@ -36,7 +56,7 @@
     <li>No sign-up, ever</li>
     <li>No subscriptions, no paywalls</li>
     <li>No analytics or crash SDKs</li>
-    <li>No ads — one banner is left, in Eluna Cycle on Android, and it is on its way out</li>
+    <li>No ads</li>
     <li>Tips, if you feel like it; they unlock nothing</li>
     <li>Encrypted, user-owned backups</li>
   </ul>
@@ -44,72 +64,85 @@
   <h2 id="apps">The apps</h2>
   <ul class="apps">
     <li class="app-card">
-      <img class="icon" src="icons/eluna-cycle.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Cycle</h3>
-      <p class="kind">Menstrual-cycle and symptom tracker. Health data encrypted on
-      the device, predictions computed locally.</p>
+      <a class="card-link" href="/cycle/">
+        <img class="icon" src="/icons/eluna-cycle.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Cycle</h3>
+        <p class="kind">Period and ovulation tracker that keeps your health data on your phone.</p>
+      </a>
       <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=com.eluna.cycle">Google Play</a>
-        <a href="https://apps.apple.com/app/id6766957276">App Store</a>
+        <a class="" href="https://apps.apple.com/app/id6766957276">App Store</a>
+        <a class="" href="https://play.google.com/store/apps/details?id=com.eluna.cycle">Google Play</a>
       </div>
     </li>
     <li class="app-card">
-      <img class="icon" src="icons/eluna-reader.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Reader</h3>
-      <p class="kind">E-book reader for books you own. Highlights, notes, dictionaries,
-      OPDS catalogues — all offline-first. No ads; a tip jar instead.</p>
+      <a class="card-link" href="/screen/">
+        <img class="icon" src="/icons/eluna-screen.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Screen</h3>
+        <p class="kind">TV show, anime and movie tracker with an episode calendar and no account.</p>
+      </a>
       <div class="links">
-        <a href="https://apps.apple.com/app/id6796627281">App Store</a>
+        <a class="" href="https://apps.apple.com/app/id6793637124">App Store</a>
+        <a class="" href="https://play.google.com/store/apps/details?id=com.eluna.screen">Google Play</a>
+      </div>
+    </li>
+    <li class="app-card">
+      <a class="card-link" href="/budget/">
+        <img class="icon" src="/icons/eluna-budget.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Budget</h3>
+        <p class="kind">Expense tracker and budget planner with no bank login and no account.</p>
+      </a>
+      <div class="links">
+        <a class="" href="https://apps.apple.com/app/id6799674143">App Store</a>
         <span class="badge">Soon on Google Play</span>
       </div>
     </li>
     <li class="app-card">
-      <img class="icon" src="icons/eluna-screen.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Screen</h3>
-      <p class="kind">TV, film and anime tracker with a calendar, watch diary and
-      end-to-end-encrypted cloud backup. No subscription and no ads.</p>
+      <a class="card-link" href="/reader/">
+        <img class="icon" src="/icons/eluna-reader.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Reader</h3>
+        <p class="kind">Offline ebook reader for EPUB, PDF, FB2, MOBI, DjVu and comics.</p>
+      </a>
       <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=com.eluna.screen">Google Play</a>
-        <a href="https://apps.apple.com/app/id6793637124">App Store</a>
-      </div>
-    </li>
-    <li class="app-card">
-      <img class="icon" src="icons/eluna-media.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Media</h3>
-      <p class="kind">Video, audio, image and GIF converter that runs entirely on
-      your phone. It has no network code at all — nothing to upload a file to.</p>
-      <div class="links">
-        <a href="https://apps.apple.com/app/id6801963204">App Store</a>
+        <a class="" href="https://apps.apple.com/app/id6796627281">App Store</a>
         <span class="badge">Soon on Google Play</span>
       </div>
     </li>
     <li class="app-card">
-      <img class="icon" src="icons/eluna-budget.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Budget</h3>
-      <p class="kind">Expense tracker with budgets, envelopes and reports.
-      Multi-currency, statement import, receipt scanning on the device. No bank
-      connections; the database is encrypted.</p>
+      <a class="card-link" href="/media/">
+        <img class="icon" src="/icons/eluna-media.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Media</h3>
+        <p class="kind">Video, audio and photo converter that runs entirely on your phone.</p>
+      </a>
       <div class="links">
-        <a href="https://apps.apple.com/app/id6799674143">App Store</a>
+        <a class="" href="https://apps.apple.com/app/id6801963204">App Store</a>
         <span class="badge">Soon on Google Play</span>
       </div>
     </li>
     <li class="app-card">
-      <img class="icon" src="icons/eluna-subs.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Subs</h3>
-      <p class="kind">Subscription tracker with reminders, cancellation deadlines
-      and the real cost per month. No bank connections; the database is encrypted.</p>
+      <a class="card-link" href="/subs/">
+        <img class="icon" src="/icons/eluna-subs.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Subs</h3>
+        <p class="kind">Subscription tracker that reminds you before the money leaves.</p>
+      </a>
       <div class="links">
-        <a href="https://apps.apple.com/app/id6802049185">App Store</a>
+        <a class="" href="https://apps.apple.com/app/id6802049185">App Store</a>
         <span class="badge">Soon on Google Play</span>
       </div>
     </li>
     <li class="app-card">
-      <img class="icon" src="icons/eluna-kitchen.png" width="192" height="192" alt="" loading="lazy" decoding="async">
-      <h3>Eluna Kitchen</h3>
-      <p class="kind">Recipe book and food diary in one. Every ingredient is weighed
-      and matched to USDA data, so the calories are computed, not guessed.</p>
-      <div class="badges">
+      <a class="card-link" href="/kitchen/">
+        <img class="icon" src="/icons/eluna-kitchen.png" width="192" height="192"
+             alt="" loading="lazy" decoding="async">
+        <h3>Eluna Kitchen</h3>
+        <p class="kind">Recipe book and food diary where the calories are computed, not guessed.</p>
+      </a>
+      <div class="links">
         <span class="badge">Soon on the App Store</span>
         <span class="badge">Soon on Google Play</span>
       </div>
@@ -118,14 +151,14 @@
 
   <h2>One policy, honestly written</h2>
   <p>Every Eluna app is covered by a single
-  <a href="privacy/index.html">privacy policy and terms of use</a> that says, per app,
+  <a href="/privacy/">privacy policy and terms of use</a> that says, per app,
   exactly what leaves your device and how to stop it. The short version: almost
   nothing does.</p>
 </main>
 
 <footer class="site">
   <span>© 2026 Eluna · Serhii Vakulenchyk</span>
-  <span><a href="privacy/index.html">Privacy &amp; Terms</a> · <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a></span>
+  <span><a href="/privacy/">Privacy &amp; Terms</a> · <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a></span>
   <span class="fine">Set in <a href="https://github.com/sharanda/manrope">Manrope</a>
   by Mikhail Sharanda, used under the
   <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>.</span>

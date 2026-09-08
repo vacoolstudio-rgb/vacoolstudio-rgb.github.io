@@ -507,3 +507,121 @@ footer.site .fine {
   html { scroll-behavior: auto; }
   .app-card, .btn { transition: none; }
 }
+
+/* ─── Страницы приложений ──────────────────────────────────────────────────
+   Появились, когда у каждого приложения стал свой адрес. Одна страница со
+   списком из семи не может ранжироваться ни по одному конкретному запросу: у
+   неё один заголовок на «трекер цикла» и «конвертер видео» сразу. */
+
+.crumbs {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  padding-top: 26px;
+}
+
+.crumbs a { color: var(--text-dim); }
+.crumbs a:hover { color: var(--accent); }
+
+.app-hero {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.app-hero h1 { margin-bottom: 6px; }
+
+/* Крупнее карточной, но не во весь экран: иконка здесь опознавательный знак,
+   а не украшение. */
+.icon.big {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  object-fit: cover;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px var(--shadow);
+  flex: none;
+}
+
+/* Первый абзац страницы: его читает и человек, и поисковик — там же стоят
+   слова, по которым эту страницу должны находить. */
+.lede {
+  font-size: 1.06rem;
+  color: var(--text);
+  max-width: 62ch;
+}
+
+.feature-list {
+  margin: 14px 0 30px;
+  padding-left: 0;
+  list-style: none;
+  max-width: 68ch;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 9px;
+  color: var(--text-dim);
+}
+
+.feature-list li::before {
+  content: '·';
+  position: absolute;
+  left: 8px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* Вопросы раскрываются, а не занимают экран: их читают выборочно, а поисковик
+   всё равно видит текст внутри. */
+.faq {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  background: var(--bg-card);
+  max-width: 68ch;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.faq[open] summary { margin-bottom: 8px; }
+.faq p { margin: 0; color: var(--text-dim); }
+
+.other-apps {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 8px;
+  max-width: 68ch;
+}
+
+.other-apps li {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.other-apps a { font-weight: 700; }
+.other-apps .kind { color: var(--text-dim); font-size: 0.92rem; }
+
+/* Вся карточка на главной ведёт на страницу приложения; ссылки в магазины
+   остаются отдельными целями под ней. */
+.card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover h3 { color: var(--accent); }
+
+@media (max-width: 560px) {
+  .app-hero { gap: 16px; }
+  .icon.big { width: 72px; height: 72px; border-radius: 18px; }
+}

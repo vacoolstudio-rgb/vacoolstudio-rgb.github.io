@@ -34,7 +34,7 @@
 <h1>Eluna — Privacy Policy and Terms of Use</h1>
 
 <div class="meta">
-  <strong>Effective:</strong> 28 August 2026<br>
+  <strong>Effective:</strong> 11 September 2026<br>
   <strong>Applies to:</strong> every Eluna application (listed below), on Android and iOS<br>
   <strong>Publisher and data controller:</strong> Serhii Vakulenchyk (&ldquo;Eluna&rdquo;, &ldquo;we&rdquo;)<br>
   <strong>Contact:</strong> <a href="mailto:support@eluna-apps.com">support@eluna-apps.com</a>
@@ -85,6 +85,7 @@ device is spelled out <strong>per app</strong>, and the annex at the end is the 
 <tr><td><strong>Eluna Subs</strong></td><td><code>com.eluna.subs</code></td><td>Subscription and recurring-payment tracker</td></tr>
 <tr><td><strong>Eluna Budget</strong></td><td><code>com.eluna.budget</code></td><td>Expense tracker with budgets, envelopes and goals</td></tr>
 <tr><td><strong>Eluna Kitchen</strong></td><td><code>com.eluna.kitchen</code></td><td>Recipe book with computed nutrition, food diary and goals</td></tr>
+<tr><td><strong>Eluna Garage</strong></td><td><code>com.eluna.garage</code></td><td>Car maintenance, fuel and expense log</td></tr>
 </table>
 </div>
 
@@ -147,6 +148,14 @@ grams), your weight entries, what is in your pantry, your shopping list, your me
 plan, the recipes you write yourself, your favourites, and any barcodes you add by
 hand. Height, weight, sex, age and activity level, if you enter them, are used to
 compute your daily targets and stay on the device.</li>
+<li><strong>Eluna Garage</strong> — your vehicles, the work you had done and what it cost,
+fuel entries, odometer readings, other expenses, the documents you keep track of
+(insurance, inspection, their dates and any numbers you type), your reminders and
+notes, and the photos you attach — receipts, and dashboard shots taken to read the
+odometer. All of it in a local database on the device; if you turn sync on, the key
+that seals the cloud copy is kept in the iOS Keychain or the Android Keystore, never
+in the database or an export. <strong>The app never asks for your location:</strong> the
+country whose document presets it starts from is one you pick in settings.</li>
 </ul>
 
 <p><strong>Uninstalling an app deletes all of it.</strong> That is the flip side of local-first,
@@ -216,7 +225,7 @@ sold a &ldquo;remove ads&rdquo; purchase instead; it is no longer offered, and
 if you bought it there is nothing left for it to do — the ads are being removed for
 everyone.</p>
 
-<h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader, Eluna Subs, Eluna Kitchen</h3>
+<h3>3. Catalogues and reference data — Eluna Screen, Eluna Reader, Eluna Subs, Eluna Budget, Eluna Garage, Eluna Kitchen</h3>
 
 <p><strong>Eluna Screen</strong> queries the public catalogues it needs to know anything about a
 show at all: <strong>TMDB</strong>, <strong>TVmaze</strong>, <strong>Kitsu</strong>, <strong>Shikimori</strong> and <strong>Simkl</strong>. They
@@ -254,7 +263,7 @@ own file leaves the device, they are opt-in, and they are per-tap.</p>
 <p>OCR language models are downloaded from GitHub when you enable a language; the
 OCR itself runs on the device.</p>
 
-<p><strong>Eluna Subs</strong> and <strong>Eluna Budget</strong> fetch <strong>exchange rates</strong> so that amounts
+<p><strong>Eluna Subs</strong>, <strong>Eluna Budget</strong> and <strong>Eluna Garage</strong> fetch <strong>exchange rates</strong> so that amounts
 billed in other currencies can be totalled in yours. The request goes to <code>open.er-api.com</code>, or to
 <code>cdn.jsdelivr.net</code> if that is unreachable; it asks for the whole rate table and
 sends nothing about you — not which currencies you use, not what you pay. Those
@@ -267,6 +276,14 @@ downloaded once from <strong>GitHub</strong> for the language you pick, and the 
 is never uploaded anywhere. And the <em>Manage</em> button opens the provider's own
 cancellation page <strong>in your browser</strong> — from that point you are on Netflix's or
 Spotify's site, under their privacy policy, not ours.</p>
+
+<p><strong>Eluna Garage asks nothing else at all.</strong> Rates are its only outbound call, and
+switching their automatic update off in settings leaves the app entirely offline. There is
+no vehicle catalogue behind it: makes, models, services and intervals are what you type or
+what ships inside the app. Reading the mileage from a photo of your dashboard runs
+<em>on the device</em>, with the system&rsquo;s own text recognition &mdash; the picture is never
+uploaded, and no model is downloaded for it. The app has no location permission, and asks
+for the camera or your photo library only at the moment you attach a picture yourself.</p>
 
 <p><strong>Eluna Media asks nobody anything.</strong> It contains no network code: no catalogue, no
 rates, no model download, no update check. Conversion runs entirely on your phone,
@@ -289,7 +306,7 @@ runtime version and your IP address. It carries <strong>none of your data</stron
 app downloads its knowledge-base language packs from <strong>GitHub</strong> on demand, which
 tells GitHub your IP and which language you asked for.</p>
 
-<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs, Eluna Budget, Eluna Kitchen</h3>
+<h3>5. Cloud backup — Eluna Cycle, Eluna Screen, Eluna Reader, Eluna Subs, Eluna Budget, Eluna Garage, Eluna Kitchen</h3>
 
 <p>Each offers an <strong>end-to-end encrypted</strong> backup: the library is packaged and
 encrypted <strong>on your phone</strong> with a key derived from a password only you know, and
@@ -522,20 +539,20 @@ their terms; refund requests go to them, not to us.</p>
 
 <div class="tablewrap">
 <table>
-<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th><th>Eluna Budget</th><th>Eluna Kitchen</th></tr>
-<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
-<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td><td>what you earn and spend</td><td><strong>health</strong> — what you eat and your weight</td></tr>
-<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td>none (device storage)</td></tr>
-<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td><td>never</td><td>never</td></tr>
-<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
-<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td><td>no catalogue; downloads translation and optional barcode packs from GitHub</td></tr>
-<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td><td>only via support email, opt-in</td><td>—</td></tr>
-<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td><td>Drive / iCloud (E2E)</td><td>iCloud (E2E), opt-in</td></tr>
-<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td><td>optional — plain JSON, plus a separate encrypted file</td></tr>
+<tr><th></th><th>Eluna Cycle</th><th>Eluna Reader</th><th>Eluna Screen</th><th>Eluna Media</th><th>Eluna Subs</th><th>Eluna Budget</th><th>Eluna Kitchen</th><th>Eluna Garage</th></tr>
+<tr><td>Account / login</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Our servers</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Analytics / crash SDK</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td><td>none</td></tr>
+<tr><td>Sensitive category</td><td><strong>health</strong></td><td>reading habits</td><td>viewing habits</td><td>the files you convert</td><td>what you pay for</td><td>what you earn and spend</td><td><strong>health</strong> — what you eat and your weight</td><td>your car, its documents and what it costs you</td></tr>
+<tr><td>Local encryption</td><td>partial (sensitive fields)</td><td>app files; secrets in keystore</td><td>none (device storage)</td><td>none (device storage)</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td><strong>whole database</strong> — SQLCipher AES-256</td><td>none (device storage)</td><td>none (device storage); sync key in the keystore</td></tr>
+<tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td><td>never</td><td>never</td><td>never</td></tr>
+<tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>&mdash;</td></tr>
+<tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
+<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td><td>no catalogue; downloads translation and optional barcode packs from GitHub</td><td>exchange rates only; mileage read from a photo <strong>on the device</strong></td></tr>
+<tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td><td>only via support email, opt-in</td><td>—</td><td>&mdash;</td></tr>
+<tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>&mdash;</td></tr>
+<tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td><td>Drive / iCloud (E2E)</td><td>iCloud (E2E), opt-in</td><td>iCloud (E2E), opt-in</td></tr>
+<tr><td>Encrypted export</td><td>yes</td><td><strong>no — plain ZIP</strong></td><td>yes</td><td>nothing to export</td><td>yes by default</td><td>optional — plain JSON, plus a separate encrypted file</td><td><strong>no</strong> &mdash; plain JSON</td><td><strong>no</strong> &mdash; plain ZIP with your photos, and CSV</td></tr>
 </table>
 </div>
 

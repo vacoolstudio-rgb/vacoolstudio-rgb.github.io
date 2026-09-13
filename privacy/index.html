@@ -234,9 +234,17 @@ switched off — without it the app knows nothing about any title.</p>
 
 <p>One more is asked only when you <strong>open a series</strong>: <strong>Wikidata</strong>
 (<code>query.wikidata.org</code>) is what tells the app that a show has spin-offs, or that
-films were made from it — no catalogue above records that. It receives the show&rsquo;s
-public IMDb id and your IP address, and nothing else. Wikidata&rsquo;s data is published
-under <strong>CC0</strong> (public domain).</p>
+films were made from it — no catalogue above records that. It also holds the id a
+title has <em>inside</em> a streaming service, which is what turns &ldquo;available on
+Netflix&rdquo; into a link to that particular show rather than to a home page. It
+receives the show&rsquo;s public IMDb id and your IP address, and nothing else. Wikidata&rsquo;s
+data is published under <strong>CC0</strong> (public domain).</p>
+
+<p>Which services carry a title <strong>in your country</strong> comes from <strong>JustWatch</strong>,
+delivered to the app through the TMDB API — the app never contacts JustWatch
+directly, so they see nothing of you. The country is read from your phone&rsquo;s own
+settings and is sent to TMDB as a two-letter code; no location permission is asked
+for, and none is used.</p>
 
 <p>Optionally, and on by default, an English synopsis can be sent to
 <strong>translated.net</strong> (MyMemory) to be translated into your language. The text is
@@ -548,7 +556,7 @@ their terms; refund requests go to them, not to us.</p>
 <tr><td>Ads (AdMob, non-personalized)</td><td><strong>removed</strong> on iOS; still on Google Play until the pending update</td><td>never</td><td><strong>removed in 1.0.4</strong>; yes before</td><td>never</td><td>never</td><td>never</td><td>never</td><td>never</td></tr>
 <tr><td>EEA consent form (UMP), SDK off until answered</td><td>only where the banner is left</td><td>—</td><td>only before 1.0.4</td><td>—</td><td>—</td><td>—</td><td>—</td><td>&mdash;</td></tr>
 <tr><td>In-app purchase</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td><td>tips, unlock nothing</td></tr>
-<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB, TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td><td>no catalogue; downloads translation and optional barcode packs from GitHub</td><td>exchange rates only; mileage read from a photo <strong>on the device</strong></td></tr>
+<tr><td>Talks to catalogues</td><td>—</td><td>OPDS, Wiktionary, MyMemory (opt-in)</td><td>TMDB (availability data from JustWatch), TVmaze, Kitsu, Shikimori, Simkl, Wikidata</td><td><strong>nothing — no network code</strong></td><td>exchange rates; OCR models from GitHub</td><td>exchange rates only</td><td>no catalogue; downloads translation and optional barcode packs from GitHub</td><td>exchange rates only; mileage read from a photo <strong>on the device</strong></td></tr>
 <tr><td>Sends anything you wrote</td><td>only via support email, opt-in</td><td>selected text, opt-in per tap</td><td>—</td><td>—</td><td>—</td><td>only via support email, opt-in</td><td>—</td><td>&mdash;</td></tr>
 <tr><td>Update check on launch</td><td>Expo (<code>u.expo.dev</code>)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>&mdash;</td></tr>
 <tr><td>Cloud backup</td><td>iCloud / Drive (E2E), opt-in — <strong>not in the Play build yet</strong></td><td>Drive (E2E), WebDAV/KOSync (yours)</td><td>Drive / iCloud (E2E)</td><td>—</td><td>Drive / iCloud (E2E)</td><td>Drive / iCloud (E2E)</td><td>iCloud (E2E), opt-in</td><td>iCloud (E2E), opt-in</td></tr>

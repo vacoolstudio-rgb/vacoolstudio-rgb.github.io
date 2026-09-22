@@ -375,6 +375,75 @@ APPS = [
         ],
     },
     {
+        'slug': 'garage',
+        'seo_title': 'Eluna Garage — car maintenance log and service reminders',
+        'seo_description': 'See how much is left before the next oil change or service, not what it cost. 36 parts with the usual intervals built in. No account, no server, works offline.',
+        'name': 'Eluna Garage',
+        'store_name': 'Eluna Garage: Car Maintenance',
+        'icon': 'eluna-garage.png',
+        'appstore': '6810801041',
+        'play': '',
+        'tagline': 'Car maintenance log built around what is left, not what it cost.',
+        'queries': [
+            'car maintenance app no account',
+            'oil change reminder app',
+            'car service log offline',
+            'vehicle maintenance tracker without subscription',
+            'car service history app for selling a car',
+        ],
+        'intro': (
+            'Eluna Garage is a car maintenance log built around one screen: '
+            'what is left before the next service, not what the last one cost. '
+            'Every part is a tile with a distance and a date on it, closest at '
+            'the top. No account, no server, nothing to subscribe to — the '
+            'history is a database on your own phone.'
+        ),
+        'sections': [
+            ('It already knows the intervals', [
+                'A catalogue of 36 parts — oil, filters, brake fluid, timing belt, spark plugs, coolant',
+                'Each comes with a normal interval in distance and in months; change any you disagree with',
+                'Turn on only the parts your car actually has',
+            ]),
+            ('The first day is not an empty screen', [
+                'Three questions per part — recently, long ago, or no idea — and the board is built the first evening',
+                'A guess is drawn as a guess: dashed outline and a "~"',
+                'What nobody knows says "no data" instead of showing an invented number',
+            ]),
+            ('One visit, one record', [
+                'A garage hands you one invoice with six lines, so the app takes one record: date, odometer, total, tick what was done, photograph the invoice',
+                '"Going to a garage" lays out due, soon and done recently in large type — hand the phone over or share it as plain text',
+                'Fill-ups take three fields; consumption is worked out full tank to full tank, and anything approximate says so',
+            ]),
+            ('Paperwork with a deadline', [
+                'Insurance, roadworthiness test, road tax, driving licence — the usual intervals for 198 countries are already filled in',
+                'The reminder comes twice: at the notice you choose and the evening before',
+                'At most one reminder a week, glued into a single line when several parts fall due together',
+            ]),
+            ('When you sell the car', [
+                'A PDF report built on the phone: work carried out, odometer history, photographs',
+                'VIN and amounts are left out unless you switch them on',
+                'The history also hands over as a file that adds a vehicle on the buyer\'s phone and never overwrites one',
+            ]),
+            ('Kept to yourself', [
+                'No account, no server of ours, no location, no OBD adapter',
+                'Face ID or a PIN, and an export you can take away — a ZIP with every record and photo, or CSV',
+                'The cloud vault is optional and off until you switch it on: an encrypted copy in your own iCloud',
+            ]),
+        ],
+        'faq': [
+            ('Does it need an OBD adapter or a connection to the car?',
+             'No. You enter the odometer yourself, and that is the only number the app needs.'),
+            ('Do I have to fill in a year of history before it is useful?',
+             'No. It asks three questions per part — recently, long ago, or no idea — and builds the board from your answers on the first evening.'),
+            ('Will it tell me a job is unnecessary?',
+             'No. It reports what your records say and stops there. It has not seen your car.'),
+            ('Does it work offline?',
+             'Yes, entirely. The cloud vault is optional and off until you switch it on.'),
+            ('Is it free?',
+             'Yes. No ads, no subscription, no locked features — the optional tip unlocks nothing, because nothing is locked.'),
+        ],
+    },
+    {
         'slug': 'kitchen',
         'seo_title': 'Eluna Kitchen — recipes with computed nutrition',
         'seo_description': 'A recipe book and food diary where calories are computed from weighed ingredients and USDA data, not guessed. No account, no subscription.',

@@ -102,7 +102,7 @@ def foot():
 <footer class="site">
   <span>© {SITE['year']} {E(SITE['name'])} · {E(SITE['author'])}</span>
   <span><a href="/privacy/">Privacy &amp; Terms</a> · <a href="mailto:{E(SITE['email'])}">{E(SITE['email'])}</a></span>
-  <span class="fine">Set in <a href="https://github.com/sharanda/manrope">Manrope</a>
+  <span class="fine">Set in <a href="https://fonts.google.com/specimen/Manrope">Manrope</a>
   by Mikhail Sharanda, used under the
   <a href="https://openfontlicense.org/">SIL Open Font License 1.1</a>.</span>
 </footer>
